@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leaflet Navigation</title>
+    <title>Leaflet Map - Elena Geo</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <style>
+        /* Responsive map container */
         #map {
-            height: 900px;
-            width: 100%;
+            height: 100vh; /* Full viewport height */
+            width: 100vw; /* Full viewport width */
         }
+
         /* Loading screen styles */
         #loading-screen {
             position: fixed;
@@ -25,20 +27,35 @@
             justify-content: center;
             align-items: center;
         }
+
+        /* Adjust image size for mobile and desktop */
         #loading-screen img {
-            width: 2cm; /* 2 x 2 cm image size */
-            height: 2cm;
+            width: 10vw;
+            height: 10vw;
+            max-width: 2cm;
+            max-height: 2cm;
             margin-bottom: 20px;
         }
+
+        /* Adjust font size for mobile and desktop */
         #loading-screen h1 {
-            font-size: 36px;
+            font-size: calc(18px + 2vw); /* Adjusts size based on screen width */
             color: #333;
             margin: 0;
         }
+
         #loading-screen p {
-            font-size: 20px;
+            font-size: calc(14px + 1vw); /* Adjusts size based on screen width */
             color: #666;
             margin: 10px 0 0 0;
+        }
+
+        /* Add padding to prevent content from being cut off on mobile */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
         }
     </style>
 </head>
